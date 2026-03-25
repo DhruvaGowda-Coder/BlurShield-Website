@@ -1,13 +1,23 @@
 /* BlurShield v2 — Content Styles */
-:root { --bs-blur: 7px; }
+@property --bs-blur {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 7px;
+}
+
+:root { 
+  --bs-blur: 7px; 
+  transition: --bs-blur 0.15s ease-out !important;
+}
+
 .bs-blur {
-  filter: blur(var(--bs-blur, 7px)) !important;
+  filter: blur(var(--bs-blur)) !important;
   user-select: none !important;
   cursor: pointer !important;
   border-radius: 4px;
-  transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease !important;
+  transition: filter 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease !important;
 }
-.bs-blur:hover { filter: blur(var(--bs-blur, 7px)) !important; background-color: rgba(255,255,255,0.05) !important; }
+.bs-blur:hover { filter: blur(var(--bs-blur)) !important; background-color: rgba(255,255,255,0.05) !important; }
 .bs-blur.bs-revealed { filter: blur(0px) !important; transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease !important; }
 .bs-zone-selected.bs-revealed {
   filter: blur(0px) !important;
@@ -48,12 +58,12 @@
   border-radius: 3px;
 }
 .bs-zone-selected {
-  filter: blur(var(--bs-blur, 7px)) !important;
+  filter: blur(var(--bs-blur)) !important;
   outline: 1.5px dashed #22c55e !important;
   outline-offset: 2px !important;
   user-select: none !important;
   cursor: pointer !important;
-  transition: filter 0.25s ease;
+  transition: filter 0.25s ease !important;
 }
 .bs-precheck-focus {
   outline: 3px solid #f59e0b !important;
