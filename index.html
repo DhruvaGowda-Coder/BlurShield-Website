@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BlurShield helps prevent sensitive information from being exposed during screen sharing, recordings, livestreams, and presentations.">
+  <meta name="theme-color" content="#070a10">
+  <title>BlurShield — Screen Privacy Protection</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root { color-scheme: dark; --bg:#070a10; --card:#10151e; --line:#253040; --text:#f2f6fb; --muted:#9aa9ba; --green:#21c997; }
+    body { margin:0; min-height:100vh; font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; background:radial-gradient(circle at 50% 0%,#102b28 0,#070a10 42%); color:var(--text); }
+    main { width:min(100% - 32px,960px); margin:auto; padding:72px 0; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-bottom:88px; }
+    .brand { display:flex; align-items:center; gap:12px; color:var(--text); text-decoration:none; font-weight:750; font-size:19px; }
+    .brand img { border-radius:12px; }
+    nav { display:flex; flex-wrap:wrap; gap:20px; }
+    nav a, footer a { color:var(--muted); text-decoration:none; }
+    nav a:hover, footer a:hover { color:var(--green); }
+    .hero { max-width:760px; }
+    .eyebrow { color:var(--green); text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:800; }
+    h1 { margin:18px 0; font-size:clamp(42px,8vw,76px); line-height:1.02; letter-spacing:-.045em; }
+    .lead { max-width:680px; color:var(--muted); font-size:clamp(18px,2.5vw,23px); line-height:1.55; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:32px; }
+    .button { display:inline-block; padding:13px 18px; border:1px solid var(--line); border-radius:10px; color:var(--text); text-decoration:none; font-weight:700; }
+    .button.primary { background:var(--green); border-color:var(--green); color:#03110d; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:88px; }
+    .card { padding:24px; background:rgba(16,21,30,.88); border:1px solid var(--line); border-radius:16px; color:var(--text); text-decoration:none; }
+    .card:hover { border-color:var(--green); transform:translateY(-2px); }
+    .card strong { display:block; margin-bottom:10px; font-size:18px; }
+    .card span { color:var(--muted); line-height:1.5; }
+    footer { margin-top:72px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+    @media (max-width:700px) { header { align-items:flex-start; flex-direction:column; margin-bottom:60px; } .grid { grid-template-columns:1fr; margin-top:60px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <a class="brand" href="index.html"><img src="icons/icon128.png" width="40" height="40" alt="BlurShield logo">BlurShield</a>
+      <nav aria-label="Primary navigation"><a href="features.html">Features</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a></nav>
+    </header>
+    <section class="hero">
+      <div class="eyebrow">Screen privacy protection</div>
+      <h1>Share your screen, not your secrets.</h1>
+      <p class="lead">BlurShield locally detects and visually blurs sensitive information on webpages before it can appear in screen shares, recordings, livestreams, or presentations.</p>
+      <div class="actions"><a class="button primary" href="features.html">Explore features</a><a class="button" href="privacy.html">How privacy works</a></div>
+    </section>
+    <section class="grid" aria-label="Learn more">
+      <a class="card" href="features.html"><strong>Protection features</strong><span>Explore automatic detection, custom blur zones, Meeting Mode, Risk Preview, and screenshot protection.</span></a>
+      <a class="card" href="privacy.html"><strong>Privacy Policy</strong><span>Understand local scanning, optional account services, license validation, and the data BlurShield does not upload.</span></a>
+      <a class="card" href="contact.html"><strong>Support</strong><span>Contact the BlurShield developer for questions, privacy requests, licensing help, or technical support.</span></a>
+    </section>
+    <footer>© 2026 BlurShield · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a></footer>
+  </main>
+</body>
+</html>
