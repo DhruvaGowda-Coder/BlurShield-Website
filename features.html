@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self';">
   <title>Features — BlurShield</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -559,37 +557,6 @@
     }
 
     /* ── Shortcuts ─────────────────────── */
-    .shortcut-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .shortcut-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
-      padding: 13px 18px;
-      transition: all 0.2s;
-    }
-    .shortcut-row:hover {
-      border-color: var(--green-border);
-      background: rgba(29,158,117,0.04);
-    }
-    .shortcut-label { font-size: 12px; color: var(--text); }
-    .shortcut-keys {
-      font-size: 11px;
-      font-weight: 600;
-      font-family: var(--mono);
-      color: var(--green);
-      background: var(--green-soft);
-      border: 1px solid var(--green-border);
-      padding: 4px 12px;
-      border-radius: 6px;
-    }
-
     /* ── Pricing ──────────────────────── */
     .pricing-grid {
       display: grid;
@@ -732,7 +699,7 @@
 
     /* ── Responsive ───────────────────── */
     @media (max-width: 640px) {
-      .feature-grid, .shortcut-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .feature-grid, .pricing-grid { grid-template-columns: 1fr; }
       .feature-card.span-2 { grid-column: span 1; }
       .steps-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 28px; }
@@ -761,7 +728,7 @@
 
     <!-- Top Nav -->
     <nav class="topnav">
-      <a href="options.html" class="topnav-brand">
+      <a href="index.html" class="topnav-brand">
         <img src="icons/icon128.png" width="28" height="28" alt="BlurShield">
         BlurShield
       </a>
@@ -775,13 +742,13 @@
     <section class="hero reveal">
       <div class="hero-badge"><span class="dot"></span> Chrome Extension v3.0</div>
       <h1>Your Screen. <span class="gradient">Your Secrets.</span><br>Always Protected.</h1>
-      <p>BlurShield auto-detects API keys, tokens, passwords, and PII on any webpage — and blurs them instantly before you share your screen.</p>
+      <p>BlurShield auto-detects API keys, tokens, passwords, and PII on supported webpages — and blurs them instantly before you share your screen.</p>
     </section>
 
     <!-- Stats -->
     <div class="stats-bar reveal">
       <div class="stat-item">
-        <div class="stat-num">55</div>
+        <div class="stat-num">57</div>
         <div class="stat-label">Detection patterns</div>
       </div>
       <div class="stat-item">
@@ -799,7 +766,7 @@
     </div>
 
     <!-- Live Demo -->
-    <section class="demo-section reveal">
+    <section class="demo-section reveal" data-bs-scan-ignore="showcase">
       <div class="demo-wrapper">
         <div class="demo-titlebar">
           <div class="demo-dot r"></div>
@@ -875,7 +842,7 @@
           <div class="step-num">02</div>
           <div class="step-icon">🔍</div>
           <div class="step-title">Auto-Scan Every Page</div>
-          <div class="step-desc">BlurShield quietly scans every webpage you visit using 55 regex patterns. Detected secrets are blurred in real-time.</div>
+          <div class="step-desc">BlurShield scans supported webpages locally using 57 regex patterns. Detected secrets are blurred in real-time.</div>
         </div>
         <div class="step-card reveal reveal-delay-3">
           <div class="step-num">03</div>
@@ -896,7 +863,7 @@
         <div class="feature-card">
           <div class="fc-icon" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2)">🔍</div>
           <div class="fc-title">Auto-Detection Engine</div>
-          <div class="fc-desc">55 regex patterns detect API keys, tokens, passwords, and PII from AWS, GitHub, Stripe, OpenAI, Google Cloud, and 25+ more services in real-time.</div>
+          <div class="fc-desc">57 regex patterns detect API keys, tokens, passwords, and PII from AWS, GitHub, Stripe, OpenAI, Google Cloud, and 25+ more services in real-time.</div>
         </div>
         <div class="feature-card">
           <div class="fc-icon" style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2)">🔒</div>
@@ -916,7 +883,7 @@
         <div class="feature-card">
           <div class="fc-icon" style="background:rgba(29,158,117,0.1);border:1px solid rgba(29,158,117,0.2)">📋</div>
           <div class="fc-title">Clipboard Guard</div>
-          <div class="fc-desc">Warns you when you copy sensitive data and again when you paste it — with options to Allow, Redact, or Cancel.</div>
+          <div class="fc-desc">Tracks copied secrets temporarily in memory and warns before sensitive text is pasted — with options to Allow, Redact, or Cancel.</div>
         </div>
         <div class="feature-card">
           <div class="fc-icon" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2)">🔴</div>
@@ -926,7 +893,7 @@
         <div class="feature-card">
           <div class="fc-icon" style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2)">🎬</div>
           <div class="fc-title">Meeting Mode</div>
-          <div class="fc-desc">One shortcut to blur ALL text content on the entire page instantly. Perfect for when someone unexpectedly asks to see your screen.</div>
+          <div class="fc-desc">Blur all page content instantly from the BlurShield popup. Perfect for when someone unexpectedly asks to see your screen.</div>
         </div>
         <div class="feature-card">
           <div class="fc-icon" style="background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.2)">📸</div>
@@ -936,7 +903,7 @@
         <div class="feature-card span-2">
           <div class="fc-icon" style="background:var(--green-soft);border:1px solid var(--green-border)">🛡️</div>
           <div class="fc-title">Screen-Share Intercept <span class="fc-pro">PRO</span></div>
-          <div class="fc-desc">Intercepts your browser's screen-share API (getDisplayMedia) to automatically run a full security scan before any recording begins. Works with Zoom, Meet, Teams, Loom, OBS, and more.</div>
+          <div class="fc-desc">Uses your browser's screen-share API to run a security scan before a website begins sharing your screen. Works with browser-based sharing in Meet, Zoom, Teams, Loom, and similar web apps.</div>
         </div>
         <div class="feature-card">
           <div class="fc-icon" style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2)">📊</div>
@@ -960,13 +927,8 @@
         </div>
         <div class="feature-card">
           <div class="fc-icon" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2)">🔔</div>
-          <div class="fc-title">Recording Banner <span class="fc-pro">PRO</span></div>
-          <div class="fc-desc">When screen recording is detected, a banner appears confirming BlurShield is active and how many secrets are protected.</div>
-        </div>
-        <div class="feature-card">
-          <div class="fc-icon" style="background:rgba(29,158,117,0.1);border:1px solid rgba(29,158,117,0.2)">⌨️</div>
-          <div class="fc-title">Custom Keyboard Shortcuts</div>
-          <div class="fc-desc">Reassign every shortcut to your preferred key combo. Changes apply instantly to all open tabs.</div>
+          <div class="fc-title">Screen-Share Protection Banner <span class="fc-pro">PRO</span></div>
+          <div class="fc-desc">While a website is sharing your screen, a banner confirms that BlurShield is active and shows how many secrets are protected.</div>
         </div>
       </div>
     </section>
@@ -974,7 +936,7 @@
     <!-- Detection Library -->
     <section class="section reveal">
       <div class="section-label">Detection Library</div>
-      <div class="section-title">55 Patterns Across 30+ Services</div>
+      <div class="section-title">57 Patterns Across 30+ Services</div>
       <div class="section-sub">From cloud providers to crypto wallets — we catch what matters most.</div>
 
       <div class="pattern-wrap">
@@ -999,20 +961,6 @@
       </div>
     </section>
 
-    <!-- Keyboard Shortcuts -->
-    <section class="section reveal">
-      <div class="section-label">Productivity</div>
-      <div class="section-title">Keyboard Shortcuts</div>
-      <div class="section-sub">Control everything without touching your mouse. All shortcuts are fully customizable.</div>
-
-      <div class="shortcut-grid">
-        <div class="shortcut-row"><span class="shortcut-label">Toggle BlurShield</span><span class="shortcut-keys">Alt+Shift+B</span></div>
-        <div class="shortcut-row"><span class="shortcut-label">Reveal All Secrets</span><span class="shortcut-keys">Alt+Shift+U</span></div>
-        <div class="shortcut-row"><span class="shortcut-label">Meeting Mode</span><span class="shortcut-keys">Alt+Shift+M</span></div>
-        <div class="shortcut-row"><span class="shortcut-label">Preview Risk</span><span class="shortcut-keys">Alt+Shift+K</span></div>
-      </div>
-    </section>
-
     <!-- Pricing -->
     <section class="section reveal">
       <div class="section-label">Pricing</div>
@@ -1025,10 +973,10 @@
           <div class="price-amount">$5<span>/mo</span></div>
           <div class="price-sub">Cancel anytime</div>
           <div class="price-features">
-            <span>✓</span> All 55 detection patterns<br>
+            <span>✓</span> All 57 detection patterns<br>
             <span>✓</span> Unlimited custom zones<br>
-            <span>✓</span> Full stats dashboard<br>
-            <span>✓</span> Priority support
+            <span>✓</span> Custom patterns &amp; protection banner<br>
+            <span>✓</span> Full stats dashboard
           </div>
         </div>
         <div class="price-card featured">
@@ -1037,10 +985,10 @@
           <div class="price-amount">$39<span>/yr</span></div>
           <div class="price-sub" style="color:var(--green)">Best value</div>
           <div class="price-features">
-            <span>✓</span> Everything in Monthly<br>
+            <span>✓</span> Same complete Pro feature set<br>
             <span>✓</span> All future pattern updates<br>
-            <span>✓</span> Recording detection banner<br>
-            <span>✓</span> Custom regex patterns
+            <span>✓</span> Save $21 compared with monthly<br>
+            <span>✓</span> Billed annually
           </div>
         </div>
       </div>
@@ -1050,11 +998,11 @@
     <section class="section reveal">
       <div class="privacy-banner">
         <h3>🔐 Your Privacy is Non-Negotiable</h3>
-        <p>BlurShield processes everything locally inside your browser. No screenshots, no page content, and absolutely no detected secrets ever leave your machine.</p>
+        <p>BlurShield's detection and blurring engine runs locally inside your browser. Webpage content, screenshots, pasted text, and detected secrets are never uploaded for scanning. Only limited account, trial, and license information is sent securely to the services described in our privacy policy.</p>
         <div class="privacy-checks">
-          <span class="privacy-check">✓ Zero data collection</span>
-          <span class="privacy-check">✓ No external servers</span>
-          <span class="privacy-check">✓ 100% local processing</span>
+          <span class="privacy-check">✓ Local detection and blurring</span>
+          <span class="privacy-check">✓ No page-content uploads</span>
+          <span class="privacy-check">✓ No advertising or telemetry</span>
           <span class="privacy-check">✓ Open privacy policy</span>
         </div>
       </div>
@@ -1063,7 +1011,7 @@
     <!-- Footer -->
     <footer class="page-footer">
       <p>
-        BlurShield v3.0 · Made with 🛡️ for developers who care about privacy<br>
+        BlurShield v3.0 · Screen privacy for professionals, creators, educators, streamers, and developers<br>
         <a href="contact.html">Contact</a> · <a href="privacy.html" target="_blank">Privacy Policy</a> · <a href="features.html">Features</a>
       </p>
       <p style="margin-top:8px">© 2026 BlurShield. All rights reserved.</p>

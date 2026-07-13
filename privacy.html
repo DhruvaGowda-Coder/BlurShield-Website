@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="BlurShield Privacy Policy - We never upload your screen data. Everything happens locally in your browser.">
   <title>Privacy Policy — BlurShield</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -94,45 +92,53 @@
     </div>
 
     <div class="card">
-      <div class="last-updated">Last Updated: March 2026</div>
+      <div class="last-updated">Last Updated: July 2026</div>
 
       <div class="highlight-box">
         <div class="highlight-icon">🛡️</div>
         <div class="highlight-content">
           <h3>The TL;DR</h3>
-          <p>BlurShield scans everything <strong>locally on your device</strong>. We absolutely never upload, send, store, or transmit your screen contents, API keys, passwords, or personal data to any server. Ever.</p>
+          <p>BlurShield performs sensitive-data detection and visual protection <strong>locally on your device</strong>. Webpage content, screenshots, pasted text, and detected secrets are not uploaded for scanning. Optional account, trial, and license services use only the limited information described below.</p>
         </div>
       </div>
 
       <h2>1. Local Processing Guarantee</h2>
-      <p>BlurShield operates entirely within your browser. The core functionality—scanning your screen, identifying sensitive patterns, and applying visual blur effects—all happens on your local machine using regular expressions and DOM manipulation.</p>
+      <p>BlurShield's core protection functionality—scanning supported webpage content, identifying sensitive patterns, and applying visual blur effects—runs inside your browser using packaged regular expressions and DOM manipulation.</p>
       <ul>
-        <li><strong>No external APIs:</strong> We do not send textual content to any external server for analysis.</li>
+        <li><strong>No cloud scanning:</strong> We do not send webpage text, screenshots, pasted content, or detected secrets to an external server for analysis.</li>
         <li><strong>No telemetry:</strong> We do not track the URLs you visit or the content you view.</li>
         <li><strong>No remote execution:</strong> The scanning engine does not rely on cloud infrastructure.</li>
       </ul>
 
-      <h2>2. Data We Collect</h2>
-      <p>To provide licensing and operational functionality, we collect the bare minimum information required:</p>
+      <h2>2. Data We Process and Collect</h2>
+      <p>BlurShield processes only the information needed to provide its protection, account, trial, and licensing features:</p>
       <ul>
-        <li><strong>Account Authentication:</strong> When you sign in to verify your Pro license, we use Google Authentication (Firebase). We store your email address solely to associate it with your license key.</li>
-        <li><strong>Settings Configuration:</strong> Your preferences (e.g., custom blur intensity, enabled features, Custom Patterns) are stored strictly inside your browser using Chrome's <code>chrome.storage.sync</code> API, which synchronizes securely with your Google account. We do not have access to this data.</li>
+        <li><strong>Local protection processing:</strong> BlurShield may locally inspect webpage content, credentials, personal communications, financial identifiers, current tab or domain context, and text being copied or pasted solely to detect and visually protect sensitive information. This content is not uploaded to BlurShield servers, sold, or shared for advertising.</li>
+        <li><strong>Account authentication:</strong> If you choose Google Sign-In, Firebase receives the identity information required to authenticate you. BlurShield stores your user ID, email address, display name, profile photo URL, and authentication tokens in extension-local browser storage to maintain your session.</li>
+        <li><strong>Trial and subscription status:</strong> Firebase stores the minimum user identifier and trial record required to determine trial access. Lemon Squeezy manages purchases and validates user-provided license keys. BlurShield does not receive or store payment-card details from purchases.</li>
+        <li><strong>Settings and custom patterns:</strong> Preferences, whitelisted domains, paste-trusted domains, custom zones, custom patterns, and license configuration are stored using browser extension storage. If browser synchronization is enabled, the browser vendor may synchronize this data across your signed-in browser profiles. BlurShield does not upload custom patterns or webpage contents to its own servers.</li>
+        <li><strong>Local activity statistics:</strong> Counts such as secrets blurred, reveals, and active days are stored locally in the extension and are not transmitted to BlurShield.</li>
       </ul>
 
       <h2>3. Third-Party Services</h2>
       <p>We use the following trusted third-party services to handle account management and payments:</p>
       <ul>
-        <li><strong>Google Firebase:</strong> Used securely for sign-in functionality and license verification.</li>
+        <li><strong>Google Firebase:</strong> Used for optional Google authentication, session renewal, and trial/access records.</li>
         <li><strong>Lemon Squeezy:</strong> Used as our merchant of record to process payments securely. BlurShield never sees or stores your credit card details.</li>
+        <li><strong>Browser synchronization:</strong> Chrome or Microsoft Edge may synchronize extension settings according to your browser account and sync preferences.</li>
       </ul>
 
       <h2>4. Permissions We Request</h2>
       <p>BlurShield requests certain Chrome Extension permissions to function fully. Here is why we need them:</p>
       <ul>
-        <li><code>activeTab</code> &amp; <code>scripting</code>: Necessary to scan the active page for secrets and apply CSS blur filters over them.</li>
-        <li><code>storage</code>: To save your configuration and preferences locally.</li>
-        <li><code>identity</code>: To securely process Google Sign-In for license management without requiring passwords.</li>
-        <li><code>notifications</code>: To alert you when a secret is accidentally copied to your clipboard.</li>
+        <li><code>Site access</code> and <code>scripting</code>: Scan supported pages locally, apply visual protection, and run user-requested actions such as Risk Preview and custom zone selection.</li>
+        <li><code>tabs</code>: Check open tabs during an explicit pre-share scan, update protection status, and focus a tab the user chooses to review.</li>
+        <li><code>storage</code>: Save settings, protection zones, local statistics, account session, and access status.</li>
+        <li><code>identity</code>: Provide optional Google Sign-In, maintain an authenticated session, and create or retrieve a free-trial record without requesting your Google password.</li>
+        <li><code>notifications</code>: Alert you when screen sharing is stopped or blocked because sensitive information may be exposed, and confirm license activation.</li>
+        <li><code>downloads</code>: Save a PNG screenshot only when you explicitly request a Full Screen or Selected Area capture.</li>
+        <li><code>contextMenus</code>: Provide right-click actions for blurring an element, managing a domain, and opening Settings.</li>
+        <li><code>alarms</code>: Periodically refresh access and badge state and remove old locally stored activity statistics.</li>
       </ul>
 
       <h2>5. Changes to this Policy</h2>
